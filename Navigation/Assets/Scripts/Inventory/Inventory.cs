@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour {
 
-    
+
+
+
     public static Inventory instance;
     
 
@@ -27,5 +29,6 @@ public class Inventory : MonoBehaviour {
     public void RemoveItem(Item item)
     {
         items.Remove(item);
+        onItemChangedCallback.Invoke();
     }
 }
